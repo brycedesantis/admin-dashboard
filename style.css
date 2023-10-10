@@ -1,40 +1,37 @@
-:root {
-    --main-color: #9A3B3B;
-    --secondary-color: #E2C799;
-    --accent-color: #C08261;
+:root {   
+    --sidebar-color: #0CCE6B;
+    --sidebar-text-color: #363537;
+    --header-color: #EF2D56;
+    --button-color: #363537;
+    --border-color: #EF2D56;
     --text-color-light: #F2ECBE;
 }
 
-::placeholder{
-    color: var(--text-color-light);
-}
 
 * {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 .container {
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: repeat(5, 1fr);
 }
 
 .header{
-    background-color: var(--accent-color);
+    background-color: var(--header-color);
 
     grid-column: 2/3;
     grid-row: 1/2;
 
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    align-items: baseline;
+    align-items: center;
 }
 
-.header > span {
-    justify-self: end;
-    padding-top: 3.6em;
+.header  span {
     cursor: pointer;
 }
 
@@ -44,7 +41,6 @@
 
 .search-bar {
     height: 2.4em;
-    background-color: var(--accent-color);
     border: 1px solid black;
     border-radius: 2.5em;
     padding-left: 1em;
@@ -68,7 +64,6 @@
 
 .user h4 {
     font-size: 1.5em;
-    padding-top: 6.3em;
 }
 
 .buttons {
@@ -85,13 +80,13 @@ button {
     border: none;
     border-radius: 2.5em;
     color: var(--text-color-light);
-    background-color: var(--main-color);
+    background-color: var(--button-color);
+    cursor: pointer;
 }
 
 .sidebar {
-    border: 1px solid black;
-    background-color: var(--main-color);
-    color: var(--text-color-light);    
+    background-color: var(--sidebar-color);
+    color: var(--button-color);    
 
     grid-row: 1/6;
 
@@ -126,6 +121,7 @@ button {
 
 .links * {
     font-size: 1.6em;
+    padding-bottom: .5em;
 }
 
 .links span {
@@ -135,7 +131,35 @@ button {
 }
 
 .content {
-    background-color: var(--secondary-color);
 
     grid-row: 2/6;
+
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding: 2em;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding-right: 50px;
+}
+
+.card {
+    height: 200px;
+    padding: 5px;
+    border-left: 10px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.33);
+}
+
+.feed {
+    display: grid;
+    gap: 15px;
+}
+
+.card.long {
+    height: 300px;
+    border: none;
 }
